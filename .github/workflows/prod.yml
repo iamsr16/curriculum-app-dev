@@ -24,19 +24,3 @@ jobs:
         repository: shreya1605/myrepo
         dockerfile: curriculum-back/Dockerfile
         tags: latest
-
-  build-and-deploy-front:
-    name: Build and Deploy Front-end
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: shreya1605/myrepo
-        dockerfile: curriculum-front/Dockerfile
-        tags: latest
